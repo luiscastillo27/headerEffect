@@ -15,6 +15,7 @@
 		DE35D52F213359AF00222ABA /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35D52E213359AF00222ABA /* HeaderView.swift */; };
 		DE35D53121335CE900222ABA /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35D53021335CE900222ABA /* ProfileController.swift */; };
 		DE35D533213360D700222ABA /* Comments.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE35D532213360D700222ABA /* Comments.swift */; };
+		DE5950FA2133955E00C9D220 /* ActionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE5950F92133955E00C9D220 /* ActionController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DE35D52E213359AF00222ABA /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		DE35D53021335CE900222ABA /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		DE35D532213360D700222ABA /* Comments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comments.swift; sourceTree = "<group>"; };
+		DE5950F92133955E00C9D220 /* ActionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DE35D52E213359AF00222ABA /* HeaderView.swift */,
 				DE35D53021335CE900222ABA /* ProfileController.swift */,
 				DE35D532213360D700222ABA /* Comments.swift */,
+				DE5950F92133955E00C9D220 /* ActionController.swift */,
 			);
 			path = profileEffect;
 			sourceTree = "<group>";
@@ -147,6 +150,7 @@
 				DE35D53121335CE900222ABA /* ProfileController.swift in Sources */,
 				DE35D52D213358BE00222ABA /* TableViewCell.swift in Sources */,
 				DE35D51B213356A200222ABA /* AppDelegate.swift in Sources */,
+				DE5950FA2133955E00C9D220 /* ActionController.swift in Sources */,
 				DE35D52F213359AF00222ABA /* HeaderView.swift in Sources */,
 				DE35D533213360D700222ABA /* Comments.swift in Sources */,
 			);

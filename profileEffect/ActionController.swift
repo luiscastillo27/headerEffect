@@ -1,5 +1,5 @@
 //
-//  ProfileController.swift
+//  ActionController.swift
 //  profileEffect
 //
 //  Created by Luis Castillo on 26/08/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileController: UITableViewController {
+class ActionController: UITableViewController {
 
     private var comment:[Comments] = [Comments]()
     
@@ -33,6 +33,11 @@ class ProfileController: UITableViewController {
     
     
     func UpdateView() {
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
         tableView.backgroundColor = UIColor.white
         Headerview = tableView.tableHeaderView
         tableView.tableHeaderView = nil
@@ -74,12 +79,37 @@ class ProfileController: UITableViewController {
     
     override func scrollViewDidScroll(_ scrollView: UIScrollView) {
         self.Setupnewview()
+        var offset = scrollView.contentOffset.y / 150
+        if offset > -0.5{
+            UIView.animate(withDuration: 0.2, animations: {
+                offset = 1
+                let color = UIColor.init(red: 1, green: 1, blue: 1, alpha: offset)
+                let navigationcolor = UIColor.init(hue: 0, saturation: offset, brightness: 1, alpha: 1)
+                
+                self.navigationController?.navigationBar.tintColor = navigationcolor
+                self.navigationController?.navigationBar.backgroundColor = color
+                UIApplication.shared.statusBarView?.backgroundColor = color
+                
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: navigationcolor]
+                self.navigationController?.navigationBar.barStyle = .default
+            })
+        } else {
+            UIView.animate(withDuration: 0.2, animations: {
+                let color = UIColor.init(red: 1, green: 1, blue: 1, alpha: offset)
+                self.navigationController?.navigationBar.tintColor = UIColor.white
+                self.navigationController?.navigationBar.backgroundColor = color
+                UIApplication.shared.statusBarView?.backgroundColor = color
+                
+                self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+                self.navigationController?.navigationBar.barStyle = .black
+            })
+        }
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return UITableViewAutomaticDimension
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -95,9 +125,6 @@ class ProfileController: UITableViewController {
         cell.txtComment.text = data.comment
         return cell
     }
-    
-    @IBAction func btnDissmis(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
-    }
+
 
 }
